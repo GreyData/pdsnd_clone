@@ -66,11 +66,11 @@ def get_month():
     ui = 99
     while ui not in range(13):
         try:
-            print("please enter the month [1 - 12] you wish to filter by? [0] for All")
+            print("please select the month [1 - 12] you wish to filter by? [0] for All")
             ui = int(input("?_ "))
         except:
             ui=13
-            print("please enter a month number from 0 to 12")
+            print("please select a month number from 0 to 12")
         finally:
             print("...")
             
