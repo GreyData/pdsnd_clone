@@ -11,7 +11,7 @@ python.pyreadscsv datafiles as excluded.
 credit where credit is due.
 
 2021-10-28 -001 adding initial files comments etc
-2021-10-28 -002 no realchange to the files in the repository, just adding new comments here
-
+2021-10-28 -002 no real change to the files in the repository, just adding new comments here
+2021-10-28 -003 cleared out some irrelevant comment code from the pain .py file to clean up the code
 
 
