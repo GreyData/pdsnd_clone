@@ -10,9 +10,12 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 
 """
 Clear some lines in the output to improve readability
+add underline after cleared spaces
 """
 def cls():
     print("\n"*20)
+    print("_"*print_width) 
+
 
 def printline(ques,ans=""):
     
