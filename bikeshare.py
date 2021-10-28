@@ -245,6 +245,11 @@ def user_stats(df):
     printline("This took %s seconds." % (time.time() - start_time))
     #print('-'*40)
 
+"""
+this is not the final file, as the final upload was coded on adifferent machine
+the main below may be different to the final submission, but
+does loop throught the requirements
+"""
 def main():
       
     while True:
