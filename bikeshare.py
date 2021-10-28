@@ -246,6 +246,35 @@ def user_stats(df):
     #print('-'*40)
 
 """
+moved the cycle print proc from the test file into here
+"""
+def cycleprint(df):
+    ix=0
+    linesPP = 25
+    for index,row in df.iterrows():
+        inp='X'
+        ix+=1
+        if ix==1:
+            print('/n Start |End |Duration | From | To |UserType | row:{}...'.format(index))
+
+        c1 = row.get('Start Time',0)
+        c2 = row.get('End Time',0)
+        c3 = row.get('Trip Duration',0)
+        c4 = row.get('Start Station',0)
+        c5 = row.get('End Station',0)
+        c6 = row.get('User Type',0)
+        print('{}|{}|{}|{}|{}|{}|'.format(c1,c2,c3,c4,c5,c6))
+
+        if ix > linesPP:
+            try:
+                inp=input("Continue? \n [N to exit] > ")[0].lower()
+            except:
+                inp='X'    
+            finally:
+                ix=0
+        if inp == 'n':
+            break
+"""
 this is not the final file, as the final upload was coded on adifferent machine
 the main below may be different to the final submission, but
 does loop throught the requirements
@@ -263,6 +292,9 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         printline("*")
+
+        cycleprint(df)
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart[0].lower() != 'y': #es':
             break
