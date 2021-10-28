@@ -16,8 +16,7 @@ def cls():
 
 def printline(ques,ans=""):
     
-    #l= "|",ques, " - ", " "*(20-len(ques) ),"|" ,ans
-    #l = list(range(1,len(CITY_DATA)+1)) + [w[0].lower() for w in list(CITY_DATA.keys())]
+    
     print("|", "*"*(print_width-len(ques) ),ques, " | " ,ans )
 
 """
@@ -120,14 +119,12 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    
     city = get_city()
     #city = "chicago"
 
-    # TO DO: get user input for month (all, january, february, ... , june)
     month = get_month()  #0-12 returned
     
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     #day ="tuesday"
     day = get_day()  # 0-7
     
@@ -174,17 +171,11 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # TO DO: display the most common month
     #printline(" most common month :", df["StartMonth"].mode() )
     printline("most common month :", top(df,"StartMonth"))
-    # TO DO: display the most common day of week
     printline("most common weekday :", top(df,"WeekDay"))
-    # TO DO: display the most common start hour
     printline("most common starting Hour :", top(df,"StartHr")) #df['Start Time'].dt.hour.value_counts().idxmax())
-    #df['Start Time'].dt.hour.value_counts().idxmax()
     printline("This took %s seconds." % (time.time() - start_time))
-    #print('-'*40)1
-
 
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
@@ -193,11 +184,8 @@ def station_stats(df):
     start_time = time.time()
 
     
-    # TO DO: display most commonly used start station
     printline("most common Start Station :", top(df,"Start Station"))
-    # TO DO: display most commonly used end station
     printline("most common End Station :", top(df,"End Station"))
-    # TO DO: display most frequent combination of start station and end station trip
     df['Trip Name'] = df['Start Station'][:10] + ' -to- ' + df['End Station'][:10] 
     printline("most common Journey :", top(df,"Trip Name"))
 
